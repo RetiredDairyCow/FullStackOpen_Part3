@@ -1,0 +1,27 @@
+{
+  "name": "fsopart3",
+  "version": "0.0.1",
+  "description": "part 3 of full stack open",
+  "main": "index.js",
+  "scripts": {
+    "dev" : "node index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\"  && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RetiredDairyCow/FullStackOpen_Part3.git"
+  },
+  "author": "ashesh patel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RetiredDairyCow/FullStackOpen_Part3/issues"
+  },
+  "homepage": "https://github.com/RetiredDairyCow/FullStackOpen_Part3#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
