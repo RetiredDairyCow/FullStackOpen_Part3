@@ -30,8 +30,14 @@ app.get('/api/persons', (request, response) => {
     response.json(persons)
 })
 
-app.get('/', (request, response) => {
-    response.send('<h2>Hello world</h2>')
+app.get('/info', (request, response) => {
+    const totPersons = Object.keys(persons).length
+    
+    const info = {
+        content: `Phonebook has info for ${totPersons} people`,
+        date: new Date()
+    }
+    response.json(info)
 })
 
 
