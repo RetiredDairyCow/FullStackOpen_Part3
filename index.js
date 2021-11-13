@@ -66,19 +66,22 @@ app.delete('/api/persons/:id', (request, response) => {
 })
 
 app.post('/api/persons', (request, response) => {
+    console.log(request.body.number)
     const reqBody = request.body
-    const reqName = request.body.content
+    const reqName = request.body.name
     
     if(persons.find(p => p.name === reqName)) {
         return response.status(400).json({"error": "name must be unique"})
     }
 
-    if (!reqBody.content) return response.status(400).json({"error" : "content missing"})
+    if (!reqBody.name) return response.status(400).json({"error" : "content missing"})
     
     const newPerson = {
-        name : reqBody.content,
-        important : reqBody.important || false,
         id: Math.floor(Math.random() * 100),
+        name : reqName,
+        number : Number(reqBody.number),
+        important : reqBody.important || false,
+        
         date: new Date()
     }
     persons = persons.concat(newPerson)
@@ -86,7 +89,7 @@ app.post('/api/persons', (request, response) => {
 
 })
 
-const PORT = process.env.PORT || 3001
+const PORT = 3001
 app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`)
 })
